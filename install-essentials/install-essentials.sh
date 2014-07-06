@@ -17,7 +17,7 @@ sudo apt-get update
 
 sudo apt-get -y dist-upgrade
 
-wget -O - https://github.com/iakov/trik-misc/blob/master/install-essentials/ubuntu-packages.list |\
+wget -O - https://raw.githubusercontent.com/iakov/trik-misc/master/install-essentials/ubuntu-packages.list |\
       grep -Ev "^#" | xargs sudo apt-get -y install --no-install-recommends
 
 sudo apt-get autoremove
