@@ -15,7 +15,7 @@ sudo apt-get -y install software-properties-common wget
 sudo apt-add-repository -y ppa:ermshiperete/monodevelop
 sudo apt-get update
 
-sudo apt-get dist-upgrade
+sudo apt-get -y dist-upgrade
 
 wget -O - https://github.com/iakov/trik-misc/blob/master/install-essentials/ubuntu-packages.list |\
       grep -Ev "^#" | xargs sudo apt-get -y install --no-install-recommends
