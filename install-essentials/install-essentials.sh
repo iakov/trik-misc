@@ -5,9 +5,10 @@
 set -e
 set -o xtrace
 
+sudo apt-get -y install software-properties-common
 sudo apt-add-repository -y ppa:ermshiperete/monodevelop
 sudo apt-get update
-sudo apt-get install etckeeper
+sudo apt-get -y install etckeeper
 sudo sed -i -r -e 's/^(VCS=.*)$/#&/' /etc/etckeeper/etckeeper.conf
 sudo sed -i -r -e 's/^#(VCS="git".*)$/\1/' /etc/etckeeper/etckeeper.conf
 pushd /etc && sudo etckeeper init && sudo git commit -am  "Initial" && popd
