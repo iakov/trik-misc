@@ -13,7 +13,7 @@ sudo sed -i -r -e 's/^(VCS=.*)$/#&/' /etc/etckeeper/etckeeper.conf
 sudo sed -i -r -e 's/^#(VCS="git".*)$/\1/' /etc/etckeeper/etckeeper.conf
 pushd /etc && sudo etckeeper init && sudo git commit -am  "Initial" && popd
 
-cat ubuntu-packages.list | grep -Ev "^#" | xargs sudo apt-get -y install
+cat ubuntu-packages.list | grep -Ev "^#" | xargs sudo apt-get -y install --no-install-recommends
 
 SDK=$(mktemp)
 wget --verbose -O $SDK http://195.19.241.150/packages/updates/sdk/latest-trik-sdk.sh
