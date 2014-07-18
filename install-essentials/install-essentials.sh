@@ -3,6 +3,11 @@
 # 2. Make sure there is enough space for temporary files.
 # 3. Do not be afraid to proceed manually if script fails.
 
+# 
+# Install wget (sudo apt-get install -y wget)
+# and run
+# wget -O - http://bit.ly/trikubuntu1407 | bash
+
 #Path for TRIK related sources
 TRIKSRC=~/trik-src
 
@@ -28,7 +33,7 @@ sudo apt-get autoremove
 sudo apt-get clean
 
 SDK=$(mktemp)
-wget --verbose -O $SDK http://195.19.241.150/packages/updates/sdk/latest-trik-sdk.sh
+wget --verbose -O $SDK http://downloads.trikset.com/updates/sdk/latest-trik-sdk.sh
 echo Running SDK installer from $SDK 
 chmod +x $SDK 
 $SDK -y -D
