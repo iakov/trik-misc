@@ -325,6 +325,7 @@ tar
 tasksel
 tcpdump
 telnet
+terminator
 time
 tzdata
 ubuntu-keyring
