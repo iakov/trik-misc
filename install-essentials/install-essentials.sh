@@ -6,7 +6,7 @@
 # 
 # Install wget (sudo apt-get install -y wget)
 # and run
-# wget -O - http://bit.ly/trikubuntu1407 | bash
+# cd ~ && wget http://bit.ly/trikubuntu1407 && source trikubuntu1407
 
 #Path for TRIK related sources
 TRIKSRC=~/trik-src
