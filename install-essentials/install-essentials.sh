@@ -22,6 +22,8 @@ pushd /etc && ( [ -d ".git" ] || sudo etckeeper init) && sudo git commit -am  "B
 
 sudo apt-get -y install software-properties-common wget
 sudo apt-add-repository -y ppa:ermshiperete/monodevelop
+sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
+
 sudo apt-get update
 
 sudo apt-get -y dist-upgrade
@@ -29,16 +31,15 @@ sudo apt-get -y dist-upgrade
 wget -O - https://raw.githubusercontent.com/iakov/trik-misc/master/install-essentials/ubuntu-packages.list |\
       grep -Ev "^#" | xargs sudo apt-get -y install --no-install-recommends
 
-sudo apt-get autoremove
-sudo apt-get clean
-
 SDK=$(mktemp)
 wget --verbose -O $SDK http://downloads.trikset.com/updates/sdk/latest-trik-sdk.sh
 echo Running SDK installer from $SDK 
 chmod +x $SDK 
 $SDK -y -D
-rm $SDK
 
+rm $SDK
+sudo apt-get autoremove
+sudo apt-get clean
 
 mkdir -p $TRIKSRC
 cd $TRIKSRC
