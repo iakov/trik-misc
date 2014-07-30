@@ -46,6 +46,7 @@ ed
 eject
 etckeeper
 file
+filezilla
 findutils
 friendly-recovery
 fsharp
@@ -360,6 +361,7 @@ xfonts-terminus
 xinit
 xkb-data
 xorg
+xrdp
 xserver-common
 xserver-xorg
 xserver-xorg-core
