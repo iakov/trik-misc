@@ -1,5 +1,6 @@
 #!/bin/bash
-# 1. Before running this script update your system with 'apt-get dist-upgrade'
+
+# 1.!!! This script is intended to run on clean K/X/L/Ubuntu 14.04. Edit script before running!!! 
 # 2. Make sure there is enough space for temporary files.
 # 3. Do not be afraid to proceed manually if script fails.
 
