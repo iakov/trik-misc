@@ -41,6 +41,10 @@ rm $SDK
 sudo apt-get autoremove
 sudo apt-get clean
 
+sudo mdtool setup ru
+sudo mdtool setup ci MonoDevelop.FSharpBinding
+
+
 mkdir -p $TRIKSRC
 cd $TRIKSRC
 git clone http://github.com/trikset/trikRuntime.git
