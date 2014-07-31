@@ -1,0 +1,3 @@
+#!/bin/bash
+. /opt/trik-sdk/environment-setup-armv5te-oe-linux-gnueabi 
+qtcreator
