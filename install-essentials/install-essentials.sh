@@ -12,6 +12,8 @@
 #Path for TRIK related sources
 TRIKSRC=~/trik-src
 
+EXTRAS=https://raw.githubusercontent.com/iakov/trik-misc/master/install-essentials/extra
+
 set -e
 set -o xtrace
 
@@ -29,7 +31,7 @@ sudo apt-get update
 
 sudo apt-get -y dist-upgrade
 
-wget -O - https://raw.githubusercontent.com/iakov/trik-misc/master/install-essentials/extra/ubuntu-packages.list |\
+wget -O - $EXTRAS/ubuntu-packages.list |\
       grep -Ev "^#" | xargs sudo apt-get -y install --no-install-recommends
 
 SDK=$(mktemp)
@@ -46,10 +48,10 @@ mdtool setup ru
 mdtool setup ci MonoDevelop.FSharpBinding
 
 cd ~
-for file in $(wget -O - https://raw.githubusercontent.com/iakov/trik-misc/master/install-essentials/extra/extra.files | grep -Ev "^#" )
+for file in $(wget -O - $EXTRAS/extra.files | grep -Ev "^#" )
  do 
    mkdir -p $(dirname $file)
-   wget -O $file https://raw.githubusercontent.com/iakov/trik-misc/master/install-essentials/extra/$(md5sum <<< $file | cut -f 1 -d ' ')
+   wget -O $file $EXTRAS/$(md5sum <<< $file | cut -f 1 -d ' ')
  done
 
 mkdir -p $TRIKSRC
