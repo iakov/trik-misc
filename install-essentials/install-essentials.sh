@@ -45,6 +45,13 @@ sudo apt-get clean
 mdtool setup ru
 mdtool setup ci MonoDevelop.FSharpBinding
 
+cd ~
+for file in ~/.config/lxpanel/LXDE/panels/panel
+ do 
+   mkdir -p $(dirname $file)
+   wget -O $file https://raw.githubusercontent.com/iakov/trik-misc/master/install-essentials/\
+                         extra/$(md5sum <<< $file | cut -f 1 -d ' ')
+ done
 
 mkdir -p $TRIKSRC
 cd $TRIKSRC
@@ -52,3 +59,4 @@ git clone http://github.com/trikset/trikRuntime.git
 cd trikRuntime
 ( source /opt/trik-sdk/environment-setup-armv5te-oe-linux-gnueabi && qmake trikRuntime.pro && make -j 2 )
 cd ~
+
