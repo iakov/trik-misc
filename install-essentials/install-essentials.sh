@@ -49,8 +49,7 @@ cd ~
 for file in ~/.config/lxpanel/LXDE/panels/panel
  do 
    mkdir -p $(dirname $file)
-   wget -O $file https://raw.githubusercontent.com/iakov/trik-misc/master/install-essentials/\
-                         extra/$(md5sum <<< $file | cut -f 1 -d ' ')
+   wget -O $file https://raw.githubusercontent.com/iakov/trik-misc/master/install-essentials/extra/$(md5sum <<< $file | cut -f 1 -d ' ')
  done
 
 mkdir -p $TRIKSRC
