@@ -46,7 +46,7 @@ mdtool setup ru
 mdtool setup ci MonoDevelop.FSharpBinding
 
 cd ~
-for file in ~/.config/lxpanel/LXDE/panels/panel
+for file in $(wget -O - https://raw.githubusercontent.com/iakov/trik-misc/master/install-essentials/extra/extra.files | grep -Ev "^#" )
  do 
    mkdir -p $(dirname $file)
    wget -O $file https://raw.githubusercontent.com/iakov/trik-misc/master/install-essentials/extra/$(md5sum <<< $file | cut -f 1 -d ' ')
