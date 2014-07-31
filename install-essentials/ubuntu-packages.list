@@ -319,6 +319,7 @@ rsyslog
 sed
 sensible-utils
 software-properties-gtk
+sshfs
 strace
 sudo
 sysvinit-utils
