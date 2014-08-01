@@ -13,6 +13,7 @@
 TRIKSRC=~/trik-src
 
 EXTRAS=https://raw.githubusercontent.com/iakov/trik-misc/master/install-essentials/extra
+FILTER_COMMENTS_CMD="grep -Ev ^#"
 
 set -e
 set -o xtrace
@@ -31,8 +32,8 @@ sudo apt-get update
 
 sudo apt-get -y dist-upgrade
 
-wget -O - $EXTRAS/ubuntu-packages.list |\
-      grep -Ev "^#" | xargs sudo apt-get -y install --no-install-recommends
+wget -O - $EXTRAS/ubuntu-packages.list | $FILTER_COMMENTS_CMD |\
+	 xargs sudo apt-get -y install --no-install-recommends
 
 SDK=$(mktemp)
 wget --verbose -O $SDK http://downloads.trikset.com/updates/sdk/latest-trik-sdk.sh
@@ -48,11 +49,19 @@ mdtool setup ru
 mdtool setup ci MonoDevelop.FSharpBinding
 
 cd ~
-for file in $(wget -O - $EXTRAS/extra.files | grep -Ev "^#" )
- do 
-   mkdir -p $(dirname $file)
-   wget -O $file $EXTRAS/$(md5sum <<< $file | cut -f 1 -d ' ')
- done
+#for file in $(wget -O - $EXTRAS/extra.files | $FILTER_COMMENTS_CMD )
+# do 
+#   mkdir -p $(dirname $file)
+#   wget -O $file $EXTRAS/$(md5sum <<< $file | cut -f 1 -d ' ')
+# done
+#
+
+#only $HOME files as for now
+cd ~
+wget -O - $EXTRAS/data.tar | tar xv -C ~ --keep-newer-files --keep-old-files --owner=$USER
+# wget -O - $EXTRAS/list | $FILTER_COMMENTS_CMD  | xargs tar u -C ~ -f extra/data.tar 
+# 
+
 
 mkdir -p $TRIKSRC
 cd $TRIKSRC
