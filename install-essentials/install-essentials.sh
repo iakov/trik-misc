@@ -58,8 +58,8 @@ cd ~
 
 #only $HOME files as for now
 cd ~
-wget -O - $EXTRAS/data.tar | tar xv -C ~ --keep-newer-files --keep-old-files --owner=$USER
-# wget -O - $EXTRAS/list | $FILTER_COMMENTS_CMD  | xargs tar u -C ~ -f extra/data.tar 
+wget -q -O - $EXTRAS/data.tar | tar xvk --keep-newer-files -C ~ --owner=$USER
+# To create backup: sed -nre "s|^ *~/(.*)|\1|p" list | xargs tar u -C ~ -f data.tar
 # 
 
 
