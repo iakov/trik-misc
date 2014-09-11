@@ -56,9 +56,11 @@ g++
 gcc-4.8-base
 gcc-4.9-base
 gdb
+gedit
 geoip-database
 git-cola
 gnupg
+gparted
 gpgv
 grep
 groff-base
@@ -218,6 +220,7 @@ libudev1
 libusb-0.1-4
 libustr-1.0-1
 libuuid1
+libv4l-dev
 libwind0-heimdal
 libx11-6
 libx11-data
@@ -253,6 +256,7 @@ man-db
 manpages
 mawk
 mc
+meld
 mime-support
 minicom
 mlocate
@@ -348,7 +352,9 @@ ureadahead
 usbutils
 util-linux
 uuid-runtime
+v4l-utils
 valgrind
+vim
 vim-common
 vim-tiny
 wamerican
@@ -357,6 +363,7 @@ wget
 whiptail
 x11-xkb-utils
 xauth
+xdg-utils
 xfonts-scalable
 xfonts-terminus
 xinit
