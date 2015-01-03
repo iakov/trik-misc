@@ -22,6 +22,7 @@ busybox-initramfs
 busybox-static
 bzip2
 ca-certificates
+cifs-utils
 command-not-found
 command-not-found-data
 console-setup
